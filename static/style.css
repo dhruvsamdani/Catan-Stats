@@ -1,0 +1,232 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: Lato;
+    font-weight: 300;
+    border-radius: 12px;
+}
+
+:root{
+    --purple: #b085f5;
+    --blue: #4b87ff;
+    --orange: #ffa088;
+}
+
+/* TITLE  */
+
+h1{
+    font-family: Lato;
+    font-weight: 300;
+    color: white;
+    margin: 0%;
+    margin-top: 10px;
+    border: none;
+    min-height: 100px;
+    justify-content: center;
+    font-size: 40pt;
+    text-align: center;
+    line-height: inherit;
+}
+
+/* BUTTON LIST */
+
+.button-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 10pt;
+    min-height: 100px;
+    
+}
+    #button-grid{
+        background-color: var(--blue);
+        min-width: 90px;
+        min-height: 90px;
+        border: none;
+        font-size: 24pt;
+        color: black;
+        margin: 10px;
+        box-shadow: 0 6px 20px 2px rgb(14, 23, 39);
+        cursor: pointer;
+        transition: all 0.3s;
+
+    }
+
+    #button-grid:nth-child(12){
+        background-color: var(--purple);
+    }
+
+    #button-grid:hover{
+        color: var(--blue);
+        background-color: black; 
+    }
+
+    #button-grid:nth-child(12):hover{
+        color: var(--purple);
+        background-color: black; 
+    }
+
+
+/* TAB MENU */
+
+.tab-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 20px;
+}
+
+.tab-link{
+    border: none;
+    color: white;
+    background: none;
+    min-width: 100px;
+    min-height: 50px;
+    margin: 10px;
+    transition: all ease 0.3s;
+}
+
+.tab-link:hover {
+    color: var(--blue) !important;
+    background: rgba(256,256,256,0.2) !important;
+    border-bottom: 3px solid var(--blue) !important;
+}
+
+/* TAB CONTENT */
+
+p{
+    text-align: center;
+    color: white;
+}
+
+.tab-button-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chart{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    max-height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.stats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlayActive{
+    display: block;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.confirm-button{
+    background-color: var(--purple);
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: none;
+    font-size: 24pt;
+    color: black;
+    margin: 10px;
+    box-shadow: 0 6px 20px 2px rgb(20, 10, 27);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.confirm-button:nth-child(2){
+    background-color: var(--orange);
+}
+
+.confirm-button:hover{
+    color: var(--purple);
+    background-color: black; 
+}
+
+.confirm-button:nth-child(2):hover{
+    color: var(--orange);
+}
+
+.winner-popup{
+    position: fixed;
+    bottom: -400px;
+    width: 100%;
+    height: 400px;
+    background-color: #252929;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
+.winner-popup-active{
+    bottom: 0px;
+}
+.winner-popup{
+    font-size: 30pt;
+}
+
+.winner-popup p{
+    margin: 20pt;
+}
+
+.winner-dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner-dropdown select{
+    
+    justify-content: center;
+    box-shadow: 0 6px 20px 2px rgb(20, 10, 27);
+    border: 0;
+    min-width: 150px;
+    background-color: var(--blue);
+    color: black;
+    font-size: 20pt;
+    text-align: left;
+    padding: 10pt 40pt 10pt 10pt;
+}
+
+.player-count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20pt;
+}
+
+.player-count-button{
+    background-color: var(--orange);
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: none;
+    font-size: 24pt;
+    color: black;
+    margin: 10px;
+    box-shadow: 0 6px 20px 2px rgb(20, 10, 27);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 70px;
+    min-height: 70px;
+}
+
+.player-count-button:hover{
+    color: var(--orange);
+    background-color: black; 
+}
+

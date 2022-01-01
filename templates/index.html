@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catan Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+</head>
+<body style="background-color: #202325;">
+
+    <h1>Catan Stats</h1> 
+
+    <div class="tab-menu">
+        <button id="counter" class="tab-link" onclick="changePage('button-page')">Counter</button>
+        <button id="stats" class="tab-link" onclick="changePage('stats-page')">Stats</button>
+    </div>
+
+    <div class="button-container tab-content">
+        <button class="button" id = "button-grid" value=2>2</button>
+        <button class="button" id = "button-grid" value=3>3</button>
+        <button class="button" id = "button-grid" value=4>4</button>
+        <button class="button" id = "button-grid" value=5>5</button>
+        <button class="button" id = "button-grid" value=6>6</button>
+        <button class="button" id = "button-grid" value=7>7</button>
+        <button class="button" id = "button-grid" value=8>8</button>
+        <button class="button" id = "button-grid" value=9>9</button>
+        <button class="button" id = "button-grid" value=10>10</button>
+        <button class="button" id = "button-grid" value=11>11</button>
+        <button class="button" id = "button-grid" value=12>12</button>
+        <button class="undo" id = "button-grid" onclick="undo()">
+            <i class="uim uim-redo" id="undo-button" ></i>
+        </button>
+    </div>
+    <div class="overlay" id="overlay" onclick="exitOverlay()"></div>
+    <div class="stats tab-content">
+       <canvas id="chart" width="200" height="200"></canvas> 
+       <p id="rolls">Number of Roles: </p>
+       <p id="last-clicked">Last Roled: </p>
+       <div class="tab-button-holder">
+           <button class="confirm-button" id = "new-game-button" onclick="restartGame()"><i class="uim uim-check"></i></button>
+           <button class="confirm-button" id="reset-button" onclick="forceReset()"><i class="uim uim-multiply"></i></button>
+       </div>
+    </div>
+
+    <div class="winner-popup" id = "popup-container">
+        <p>Winner!</p>
+        <div class="winner-dropdown">
+            <select name="winner" id="winner-select">
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="white">White</option>
+                <option value="orange">Orange</option>
+            </select>
+        </div>
+        <p>Player Count</p>
+        <div class="player-count">
+            <button class="player-count-button" value=3 onclick="updatePlayerCount(this)">3</button>
+            <button class="player-count-button" value=4 onclick="updatePlayerCount(this)">4</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
